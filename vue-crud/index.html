@@ -1,0 +1,300 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Sistema do Museu</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.2.1/vue-router.js"></script>
+
+		<div class="container">
+			<header class="page-header">
+				<div class="branding">
+					<h1>Sistema do Museu</h1>
+          <p>Uma proposta</p>
+          <hr>
+				</div>
+			</header>
+			<main id="app">
+				<router-view></router-view>
+			</main>
+		</div>
+
+		<template id="product-list">
+			<div>
+				<div class="actions">
+					<router-link class="btn btn-default" v-bind:to="{path: '/add-product'}">
+						<span class="glyphicon glyphicon-plus"></span>
+						Adicionar objeto ao acervo
+					</router-link>
+				</div>
+				<div class="filters row">
+					<div class="form-group col-sm-3">
+						<label for="search-element">Pesquisar por Número de Tombo</label>
+						<input v-model="searchKey" class="form-control" id="search-element" requred/>
+					</div>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Número de Tombo</th>
+							<th>Número de Registro</th>
+							<th>Objeto</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-for="product in filteredProducts">
+							<td>
+								<router-link v-bind:to="{name: 'product', params: {product_id: product.id}}">{{ product.numero_tombo }}</router-link>
+							</td>
+							<td>{{ product.numero_registro }}</td>
+							<td>{{ product.objeto }}</td>
+							<td>
+                <router-link title="Edit" class="fa fa-pencil btn btn-warning btn-xl" v-bind:to="{name: 'product-edit', params: {product_id: product.id}}"></router-link>
+								<router-link title="Delete" class="fa fa-trash-o btn btn-danger btn-xl" v-bind:to="{name: 'product-delete', params: {product_id: product.id}}"></router-link>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</template>
+
+		<template id="add-product">
+			<div>
+				<h2>Adicione um objeto novo</h2>
+				<form v-on:submit="createProduct">
+
+					<div class="form-group">
+						<label for="add-name">Número de Tombo</label>
+						<input class="form-control" id="add-name" v-model="product.numero_tombo" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-registro">Número de Registro</label>
+						<input class="form-control" id="add-registro" v-model="product.numero_registro" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-outros-numeros">Outros Números</label>
+						<input class="form-control" id="add-outros-numeros" v-model="product.outros_numeros" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-objeto">Objeto</label>
+						<input class="form-control" id="add-objeto" v-model="product.objeto" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-titulo">Titulo</label>
+						<input class="form-control" id="add-titulo" v-model="product.titulo" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-description-1">Descrição intriseca</label>
+						<textarea class="form-control" id="add-description-1" rows="10" v-model="product.descricao_intriseca"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="add-dimensao">Dimensão</label>
+						<input class="form-control" id="add-dimensao" v-model="product.dimensao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-material">Material</label>
+						<input class="form-control" id="add-material" v-model="product.material" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-procedencia">Procedência</label>
+						<input class="form-control" id="add-material" v-model="product.procedencia" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-observacao">Observação</label>
+						<input class="form-control" id="add-observacao" v-model="product.observacao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-tipo-aquisicao">Tipo de Aquisição</label>
+						<input class="form-control" id="add-aquisicao" v-model="product.aquisicao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-ex-proprietario">Ex-proprietário</label>
+						<input class="form-control" id="add-ex-proprietario" v-model="product.proprietario" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-data-aquisicao">Data de Aquisição</label>
+						<input class="form-control" id="add-data-aquisicao" v-model="product.data-aquisicao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-estado-conservacao">Estado de Conservação</label>
+						<input class="form-control" id="add-estado-conservacao" v-model="product.estado-conservacao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-objetos-associados">Objetos Associados</label>
+						<input class="form-control" id="add-objetos-associados" v-model="product.objetos-associados" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-exposicoes">Exposições</label>
+						<input class="form-control" id="add-exposicoes" v-model="product.exposicoes" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-publicacoes">Publicações</label>
+						<input class="form-control" id="add-publicacoes" v-model="product.publicacoes" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-restauro">Restauro</label>
+						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-pesquisa">Pesquisa</label>
+						<input class="form-control" id="add-pesquisa" v-model="product.pesquisa" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-observacao">Observações</label>
+						<input class="form-control" id="add-observacao" v-model="product.observacao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-autorizacao-uso">Autorização de uso</label>
+						<input class="form-control" id="add-autorizacao-uso" v-model="product.autorizacao-uso" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-restauro">Restauro</label>
+						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-description-2">Descrição extrinseca</label>
+						<textarea class="form-control" id="add-description-2" rows="10" v-model="product.descricao_extrinseca"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label for="add-periodo">Período</label>
+						<input class="form-control" id="add-periodo" v-model="product.periodo" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-restauro">Restauro</label>
+						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-restauro">Restauro</label>
+						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-restauro">Restauro</label>
+						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-restauro">Restauro</label>
+						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+					</div>
+					<button type="submit" class="btn btn-primary">Adicionar</button>
+					<router-link class="btn btn-default" v-bind:to="'/'">Cancelar</router-link>
+              <!--
+							<th>Título</th>
+							<th>Autor ou Autoridade:</th>
+							<th>Descrição intríseca:</th>
+							<th>Número de Tombo</th>
+							<th>Número de Registro</th>
+							<th>Outros Números</th>
+							<th>Objeto</th>
+							<th>Título</th>
+							<th>Autor ou Autoridade:</th>
+							<th>Descrição intríseca:</th>
+							<th>Dimensão:</th>
+							<th>Material:</th>
+							<th>Procedência:</th>
+							<th>Observação:</th>
+							<th>Tipo de aquisição:</th>
+							<th>Ex-proprietário:</th>
+							<th>Descrição extrínseca:</th>
+							<th>Data de aquisição:</th>
+							<th>Estado de conservação:</th>
+							<th>Objetos associados:</th>
+							<th>Exposição:</th>
+							<th>Publicações:</th>
+							<th>Restauro:</th>
+							<th>Pesquisas:</th>
+							<th>Observações:</th>
+							<th>Autorização de uso:</th>
+							<th>Período:</th>
+							<th>Referências bibliográficas:</th>
+							<th>Registrado por:</th>
+							<th>Data de registro:</th>
+							<th class="col-sm-2">Actions</th>
+              -->
+
+				</form>
+			</div>
+		</template>
+
+		<template id="product">
+			<div>
+				<h2>{{ product.numero_tombo }}</h2>
+				<b>Description: </b>
+				<div>{{ product.objeto }}</div>
+				<b>Price:</b>
+				<div>{{ product.price }}<span class="glyphicon glyphicon-euro"></span></div>
+				<br/>
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+				<router-link v-bind:to="'/'">Back to product list</router-link>
+			</div>
+		</template>
+
+		<template id="product-edit">
+			<div>
+				<h2>Editar objeto</h2>
+				<form v-on:submit="updateProduct">
+					<div class="form-group">
+						<label for="edit-name">Name</label>
+						<input class="form-control" id="edit-name" v-model="product.numero_tombo" required/>
+					</div>
+					<div class="form-group">
+						<label for="edit-description">Description</label>
+						<textarea class="form-control" id="edit-description" rows="3" v-model="product.objeto"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="edit-price">Price, <span class="glyphicon glyphicon-euro"></span></label>
+						<input type="number" class="form-control" id="edit-price" v-model="product.price"/>
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+					<router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+				</form>
+			</div>
+		</template>
+
+		<template id="product-delete">
+			<div>
+				<h2>Delete product {{ product.numero_tombo }}</h2>
+				<form v-on:submit="deleteProduct">
+					<p>The action cannot be undone.</p>
+					<button type="submit" class="btn btn-danger">Delete</button>
+					<router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+				</form>
+			</div>
+		</template>
+
+    <script src="crud.js"></script>
+	</body>
+</html>
