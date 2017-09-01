@@ -116,11 +116,6 @@
 					</div>
 
 					<div class="form-group">
-						<label for="add-observacao">Observação</label>
-						<input class="form-control" id="add-observacao" v-model="product.observacao" required/>
-					</div>
-
-					<div class="form-group">
 						<label for="add-tipo-aquisicao">Tipo de Aquisição</label>
 						<input class="form-control" id="add-aquisicao" v-model="product.aquisicao" required/>
 					</div>
@@ -129,6 +124,7 @@
 						<label for="add-ex-proprietario">Ex-proprietário</label>
 						<input class="form-control" id="add-ex-proprietario" v-model="product.proprietario" required/>
 					</div>
+          <!--
 
 					<div class="form-group">
 						<label for="add-data-aquisicao">Data de Aquisição</label>
@@ -153,11 +149,6 @@
 					<div class="form-group">
 						<label for="add-publicacoes">Publicações</label>
 						<input class="form-control" id="add-publicacoes" v-model="product.publicacoes" required/>
-					</div>
-
-					<div class="form-group">
-						<label for="add-restauro">Restauro</label>
-						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
 					</div>
 
 					<div class="form-group">
@@ -191,59 +182,23 @@
 					</div>
 
 					<div class="form-group">
-						<label for="add-restauro">Restauro</label>
-						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+						<label for="add-referencias">Referências bibliográficas</label>
+						<input class="form-control" id="add-referencias" v-model="product.referencias" required/>
 					</div>
 
 					<div class="form-group">
-						<label for="add-restauro">Restauro</label>
-						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+						<label for="add-registrado-por">Registrado por</label>
+						<input class="form-control" id="add-registrado-por" v-model="product.registrado-por" required/>
 					</div>
 
 					<div class="form-group">
-						<label for="add-restauro">Restauro</label>
-						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
+						<label for="add-data-registro">Data de Registro</label>
+						<input class="form-control" id="add-data-registro" v-model="product.data-registro" required/>
 					</div>
+          -->
 
-					<div class="form-group">
-						<label for="add-restauro">Restauro</label>
-						<input class="form-control" id="add-restauro" v-model="product.restauro" required/>
-					</div>
 					<button type="submit" class="btn btn-primary">Adicionar</button>
 					<router-link class="btn btn-default" v-bind:to="'/'">Cancelar</router-link>
-              <!--
-							<th>Título</th>
-							<th>Autor ou Autoridade:</th>
-							<th>Descrição intríseca:</th>
-							<th>Número de Tombo</th>
-							<th>Número de Registro</th>
-							<th>Outros Números</th>
-							<th>Objeto</th>
-							<th>Título</th>
-							<th>Autor ou Autoridade:</th>
-							<th>Descrição intríseca:</th>
-							<th>Dimensão:</th>
-							<th>Material:</th>
-							<th>Procedência:</th>
-							<th>Observação:</th>
-							<th>Tipo de aquisição:</th>
-							<th>Ex-proprietário:</th>
-							<th>Descrição extrínseca:</th>
-							<th>Data de aquisição:</th>
-							<th>Estado de conservação:</th>
-							<th>Objetos associados:</th>
-							<th>Exposição:</th>
-							<th>Publicações:</th>
-							<th>Restauro:</th>
-							<th>Pesquisas:</th>
-							<th>Observações:</th>
-							<th>Autorização de uso:</th>
-							<th>Período:</th>
-							<th>Referências bibliográficas:</th>
-							<th>Registrado por:</th>
-							<th>Data de registro:</th>
-							<th class="col-sm-2">Actions</th>
-              -->
 
 				</form>
 			</div>
@@ -286,11 +241,10 @@
 
 		<template id="product-delete">
 			<div>
-				<h2>Delete product {{ product.numero_tombo }}</h2>
+				<h2>Apagar objeto {{ product.numero_tombo }}</h2>
 				<form v-on:submit="deleteProduct">
-					<p>The action cannot be undone.</p>
-					<button type="submit" class="btn btn-danger">Delete</button>
-					<router-link class="btn btn-default" v-bind:to="'/'">Cancel</router-link>
+					<button type="submit" class="btn btn-danger">Apagar</button>
+					<router-link class="btn btn-default" v-bind:to="'/'">Cancelar</router-link>
 				</form>
 			</div>
 		</template>
