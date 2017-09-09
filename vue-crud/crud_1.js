@@ -1,5 +1,6 @@
 var products = [
-    {id: 4, name: 'Scutum', numero_tombo: "#234523", numero_registro: "132130", objeto: "Escudo", outros_numeros: "c", titulo: "Scutum Romanus", descricao: "Escudo retangular em formato arqueado. Frente em fundo vermelho com decoração de linhas e formatos de aves no topo. Ao centro três retângulos sobrepostos ladeados por margem ornamentada com folhas de louro. Verso, haste de madeira fixada por pequenos cilindros de metal em sua ponta.", dimensao: "105,5 x 41 x 30 cm", material: "Madeira, Bronze, Tinta", procedencia: "Dura-Europos - Síria", aquisicao:       "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "12/08/1962", objetos_associados: "a", exposicoes: "Nome da Exposição 1, Nome da exposição 2", publicacoes: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", pesquisa: "Nome de Pesquisas Relacionadas", observacao: "Notas de Observação",  autorizacao_uso: "Public Domain", restauro: "Dossiês de Restauro/Breve Resumo das atividades realizadas", periodo: "Século III A.C.", referencias: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", registrado_por: "Nome do Funcionário", data_registro: "XX/XX/XX"}
+    {id: 4, name: 'Scutum', numero_tombo: "#234523", numero_registro: "132130", objeto: "Escudo", outros_numeros: "c", titulo: "Scutum Romanus", descricao: "Escudo retangular em formato arqueado. Frente em fundo vermelho com decoração de linhas e formatos de aves no topo. Ao centro três retângulos sobrepostos ladeados por margem ornamentada com folhas de louro. Verso, haste de madeira fixada por pequenos cilindros de metal em sua ponta.", dimensao: "105,5 x 41 x 30 cm", material: "Madeira, Bronze, Tinta", procedencia: "Dura-Europos - Síria", aquisicao:       "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "12/08/1962", objetos_associados: "a", exposicoes: "Nome da Exposição 1, Nome da exposição 2", publicacoes: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", pesquisa: "Nome de Pesquisas Relacionadas", observacao: "Notas de Observação",  autorizacao_uso: "Public Domain", restauro: "Dossiês de Restauro/Breve Resumo das atividades realizadas", periodo: "Século III A.C.", referencias: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", registrado_por: "Nome do Funcionário", data_registro: "XX/XX/XX"},
+    {id: 015, name: 'Azulejo de teto com Heliodorus', numero_tombo: "#258469", numero_registro: "662045", objeto: "Pintura", outros_numeros: "25 na borda inferior interna em grafite", titulo: "Azulejo de teto com Heliodorus", descricao: "Fragmento de azulejo azulejo do teto de uma casa tem uma inscrição grega que identifica o homem barbudo pelo nome, Heliodoros e ocupação, atuário (um funcionário responsável pela distribuição dos salários nas forças armadas romanas). Fundo branco, na parte esquerda representação de figura masculina com barba e vestes em cor amarelada. À direita inscrições em grego 'INSCRIÇÃO' ladeada por arco em cor vemelha.", dimensao: "30.5 x 44 x 6.7 cm", material: "Argila, Gesso, Tinta", procedencia: "Dura-Europos - Síria", aquisicao:       "XXXXXX", proprietario: "XXXXXX", estado_conservacao: "BOM/RAZOÁVEL/RUIM/MUITO RUIM", data_aquisicao: "12/10/1962", objetos_associados: "XXXXX", exposicoes: "Nome da Exposição 1, Nome da exposição 2", publicacoes: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", pesquisa: "Nome de Pesquisas Relacionadas", observacao: "Notas de Observação",  autorizacao_uso: "Public Domain", restauro: "Dossiês de Restauro/Breve Resumo das atividades realizadas", colecao: "Nome da Coleção", periodo: "Século III A.C.", referencias: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", registrado_por: "Nome do Funcionário", data_registro: "XX/XX/XX"}
 
 ];
 
@@ -71,7 +72,7 @@ var ProductDelete = Vue.extend({
 var AddProduct = Vue.extend({
   template: '#add-product',
   data: function () {
-    return {product: {name: '', numero_tombo: "", numero_registro: "", objeto: "", outros_numeros: "", titulo: "", descricao: "", dimensao: "", material: "", procedencia: "", aquisicao: "", proprietario: "", estado_conservacao: "", data_aquisicao: "", objetos_associados: "", exposicoes: "", publicacoes: "", pesquisa: "", observacao: "",  autorizacao_uso: "", restauro: "", periodo: "", referencias: "", registrado_por: "", data_registro: ""}}
+    return {product: {name: '', colecao: "", numero_tombo: "", numero_registro: "", objeto: "", outros_numeros: "", titulo: "", descricao: "", dimensao: "", material: "", procedencia: "", aquisicao: "", proprietario: "", estado_conservacao: "", data_aquisicao: "", objetos_associados: "", exposicoes: "", publicacoes: "", pesquisa: "", observacao: "",  autorizacao_uso: "", restauro: "", periodo: "", referencias: "", registrado_por: "", data_registro: ""}}
   },
   methods: {
     createProduct: function() {
@@ -83,24 +84,25 @@ var AddProduct = Vue.extend({
         numero_registro: product.numero_registro,
         outros_numeros: product.outros_numeros,
         titulo: product.titulo,
-          dimensao: product.dimensao,
-          material: product.material,
-          procedencia: product.procedencia,
-          aquisicao: product.aquisicao,
-          proprietario: product.proprietario,
-          estado_conservacao: product.estado_conservacao,
-          data_aquisicao: product.data_aquisicao,
-          objetos_associados: product.objetos_associados,
-          exposicoes: product.exposicoes,
-          publicacoes: product.publicacoes,
-          pesquisa: product.pesquisa,
-          observacao: product.observacao,
-          autorizacao_uso: product.autorizacao_uso,
-          restauro: product.restauro,
-          periodo: product.periodo,
-          referencias: product.referencias,
-          registrado_por: product.registrado_por,
-          data_registro: product.data_registro
+        dimensao: product.dimensao,
+        material: product.material,
+        procedencia: product.procedencia,
+        aquisicao: product.aquisicao,
+        proprietario: product.proprietario,
+        estado_conservacao: product.estado_conservacao,
+        data_aquisicao: product.data_aquisicao,
+        objetos_associados: product.objetos_associados,
+        exposicoes: product.exposicoes,
+        publicacoes: product.publicacoes,
+        pesquisa: product.pesquisa,
+        observacao: product.observacao,
+        autorizacao_uso: product.autorizacao_uso,
+        restauro: product.restauro,
+        periodo: product.periodo,
+        referencias: product.referencias,
+        registrado_por: product.registrado_por,
+        data_registro: product.data_registro,
+        colecao: product.colecao
       });
       router.push('/');
     }

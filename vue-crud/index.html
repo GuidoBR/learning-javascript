@@ -101,6 +101,11 @@
 					</div>
 
 					<div class="form-group">
+						<label for="add-colecao">Coleção</label>
+						<textarea class="form-control" id="add-colecao" rows="10" v-model="product.colecao"></textarea>
+					</div>
+
+					<div class="form-group">
 						<label for="add-dimensao">Dimensão</label>
 						<input class="form-control" id="add-dimensao" v-model="product.dimensao" required/>
 					</div>
@@ -247,6 +252,8 @@
 				<div>{{ product.registrado_por}}</div>
 				<b>Data registro: </b>
 				<div>{{ product.data_registro}}</div>
+				<b>Coleção: </b>
+				<div>{{ product.colecao}}</div>
 				<br/>
 				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 				<router-link v-bind:to="'/'">Voltar para o ínicio</router-link>
