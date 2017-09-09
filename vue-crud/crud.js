@@ -74,7 +74,7 @@ var ProductDelete = Vue.extend({
 var AddProduct = Vue.extend({
   template: '#add-product',
   data: function () {
-    return {product: {name: '', objeto: '', price: ''}}
+    return {product: {name: '', numero_tombo: "", numero_registro: "", objeto: "", outros_numeros: "", titulo: "", descricao_intriseca: "", dimensao: "", material: "", procedencia: "", aquisicao: "", proprietario: "", estado_conservacao: "", data_aquisicao: "", objetos_associados: "", exposicoes: "", publicacoes: "", pesquisa: "", observacao: "",  autorizacao_uso: "", restauro: "", descricao_extrinseca: "", periodo: "", referencias: "", registrado_por: "", data_registro: ""}}
   },
   methods: {
     createProduct: function() {
@@ -83,7 +83,28 @@ var AddProduct = Vue.extend({
         id: Math.random().toString().split('.')[1],
         numero_tombo: product.numero_tombo,
         objeto: product.objeto,
-        price: product.price
+        numero_registro: product.numero_registro,
+        outros_numeros: product.outros_numeros,
+        titulo: product.titulo,
+          descricao_intriseca: product.descricao_intriseca,
+          dimensao: product.dimensao,
+          material: product.material,
+          procedencia: product.procedencia,
+          aquisicao: product.aquisicao,
+          proprietario: product.proprietario,
+          estado_conservacao: product.estado_conservacao,
+          data_aquisicao: product.data_aquisicao,
+          objetos_associados: product.objetos_associados,
+          exposicoes: product.exposicoes,
+          publicacoes: product.publicacoes,
+          pesquisa: product.pesquisa,
+          observacao: product.observacao,
+          autorizacao_uso: product.autorizacao_uso,
+          restauro: product.restauro,
+          periodo: product.periodo,
+          referencias: product.referencias,
+          registrado_por: product.registrado_por,
+          data_registro: product.data_registro
       });
       router.push('/');
     }
