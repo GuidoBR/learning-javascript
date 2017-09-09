@@ -1,5 +1,5 @@
 var products = [
-    {id: 4, name: 'Scutum', numero_tombo: "#234523", numero_registro: "132130", objeto: "Escudo", outros_numeros: "c", titulo: "Scutum Romanus", descricao_intriseca: "f", dimensao: "105,5 x 41 x 30 cm", material: "Madeira, Bronze, Tinta", procedencia: "Dura-Europos - Síria", aquisicao:       "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "12/08/1962", objetos_associados: "a", exposicoes: "Nome da Exposição 1, Nome da exposição 2", publicacoes: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", pesquisa: "Nome de Pesquisas Relacionadas", observacao: "Notas de Observação",  autorizacao_uso: "Public Domain", restauro: "Dossiês de Restauro/Breve Resumo das atividades realizadas", descricao_extrinseca: "a", periodo: "Século III A.C.", referencias: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", registrado_por: "Nome do Funcionário", data_registro: "XX/XX/XX"}
+    {id: 4, name: 'Scutum', numero_tombo: "#234523", numero_registro: "132130", objeto: "Escudo", outros_numeros: "c", titulo: "Scutum Romanus", descricao: "Escudo retangular em formato arqueado. Frente em fundo vermelho com decoração de linhas e formatos de aves no topo. Ao centro três retângulos sobrepostos ladeados por margem ornamentada com folhas de louro. Verso, haste de madeira fixada por pequenos cilindros de metal em sua ponta.", dimensao: "105,5 x 41 x 30 cm", material: "Madeira, Bronze, Tinta", procedencia: "Dura-Europos - Síria", aquisicao:       "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "12/08/1962", objetos_associados: "a", exposicoes: "Nome da Exposição 1, Nome da exposição 2", publicacoes: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", pesquisa: "Nome de Pesquisas Relacionadas", observacao: "Notas de Observação",  autorizacao_uso: "Public Domain", restauro: "Dossiês de Restauro/Breve Resumo das atividades realizadas", periodo: "Século III A.C.", referencias: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", registrado_por: "Nome do Funcionário", data_registro: "XX/XX/XX"}
 
 ];
 
@@ -71,7 +71,7 @@ var ProductDelete = Vue.extend({
 var AddProduct = Vue.extend({
   template: '#add-product',
   data: function () {
-    return {product: {name: '', numero_tombo: "", numero_registro: "", objeto: "", outros_numeros: "", titulo: "", descricao_intriseca: "", dimensao: "", material: "", procedencia: "", aquisicao: "", proprietario: "", estado_conservacao: "", data_aquisicao: "", objetos_associados: "", exposicoes: "", publicacoes: "", pesquisa: "", observacao: "",  autorizacao_uso: "", restauro: "", descricao_extrinseca: "", periodo: "", referencias: "", registrado_por: "", data_registro: ""}}
+    return {product: {name: '', numero_tombo: "", numero_registro: "", objeto: "", outros_numeros: "", titulo: "", descricao: "", dimensao: "", material: "", procedencia: "", aquisicao: "", proprietario: "", estado_conservacao: "", data_aquisicao: "", objetos_associados: "", exposicoes: "", publicacoes: "", pesquisa: "", observacao: "",  autorizacao_uso: "", restauro: "", periodo: "", referencias: "", registrado_por: "", data_registro: ""}}
   },
   methods: {
     createProduct: function() {
@@ -83,7 +83,6 @@ var AddProduct = Vue.extend({
         numero_registro: product.numero_registro,
         outros_numeros: product.outros_numeros,
         titulo: product.titulo,
-          descricao_intriseca: product.descricao_intriseca,
           dimensao: product.dimensao,
           material: product.material,
           procedencia: product.procedencia,

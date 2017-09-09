@@ -96,8 +96,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="add-description-1">Descrição intriseca</label>
-						<textarea class="form-control" id="add-description-1" rows="10" v-model="product.descricao_intriseca"></textarea>
+						<label for="add-description-1">Descrição</label>
+						<textarea class="form-control" id="add-description-1" rows="10" v-model="product.descricao"></textarea>
 					</div>
 
 					<div class="form-group">
@@ -171,11 +171,6 @@
 					</div>
 
 					<div class="form-group">
-						<label for="add-description-2">Descrição extrinseca</label>
-						<textarea class="form-control" id="add-description-2" rows="10" v-model="product.descricao_extrinseca"></textarea>
-					</div>
-
-					<div class="form-group">
 						<label for="add-periodo">Período</label>
 						<input class="form-control" id="add-periodo" v-model="product.periodo" required/>
 					</div>
@@ -216,10 +211,8 @@
 				<div>{{ product.titulo }}</div>
 				<b>Observação: </b>
 				<div>{{ product.observacao }}</div>
-				<b>Descrição íntriseca: </b>
-				<div>{{ product.descricao_intriseca }}</div>
-				<b>Descrição extrinseca: </b>
-				<div>{{ product.descricao_extrinseca }}</div>
+				<b>Descrição: </b>
+				<div>{{ product.descricao}}</div>
 				<b>Dimensão: </b>
 				<div>{{ product.dimensao }}</div>
 				<b>Procedência: </b>
