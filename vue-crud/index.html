@@ -203,15 +203,60 @@
 		</template>
 
 		<template id="product">
+
 			<div>
 				<h2>{{ product.numero_tombo }}</h2>
-				<b>Description: </b>
+				<b>Numero Registro: </b>
+				<div>{{ product.numero_registro }}</div>
+				<b>Outros números: </b>
+				<div>{{ product.outros_numeros }}</div>
+				<b>Objeto: </b>
 				<div>{{ product.objeto }}</div>
-				<b>Price:</b>
-				<div>{{ product.price }}<span class="glyphicon glyphicon-euro"></span></div>
+				<b>Titulo: </b>
+				<div>{{ product.titulo }}</div>
+				<b>Observação: </b>
+				<div>{{ product.observacao }}</div>
+				<b>Descrição íntriseca: </b>
+				<div>{{ product.descricao_intriseca }}</div>
+				<b>Descrição extrinseca: </b>
+				<div>{{ product.descricao_extrinseca }}</div>
+				<b>Dimensão: </b>
+				<div>{{ product.dimensao }}</div>
+				<b>Procedência: </b>
+				<div>{{ product.procedencia }}</div>
+				<b>Aquisição: </b>
+				<div>{{ product.aquisicao }}</div>
+				<b>Proprietário: </b>
+				<div>{{ product.proprietario }}</div>
+				<b>Estado de conservação: </b>
+				<div>{{ product.estado_conservacao }}</div>
+				<b>Restauro: </b>
+				<div>{{ product.restauro}}</div>
+				<b>Periodo: </b>
+				<div>{{ product.periodo}}</div>
+				<b>Referências: </b>
+				<div>{{ product.referencias}}</div>
+				<b>Autorização uso: </b>
+				<div>{{ product.autorizacao_uso }}</div>
+				<b>Material: </b>
+				<div>{{ product.material }}</div>
+				<b>Data aquisição: </b>
+				<div>{{ product.data_aquisicao }}</div>
+				<b>Pesquisa: </b>
+				<div>{{ product.pesquisa }}</div>
+				<b>Publicações: </b>
+				<div>{{ product.publicacoes }}</div>
+				<b>Exposições: </b>
+				<div>{{ product.exposicoes }}</div>
+				<b>Objetos associados: </b>
+				<div>{{ product.objetos_associados }}</div>
+				<b>Registrado por: </b>
+				<div>{{ product.registrado_por}}</div>
+				<b>Data registro: </b>
+				<div>{{ product.data_registro}}</div>
 				<br/>
 				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-				<router-link v-bind:to="'/'">Back to product list</router-link>
+				<router-link v-bind:to="'/'">Voltar para o ínicio</router-link>
 			</div>
 		</template>
 

@@ -1,7 +1,9 @@
 var products = [
-  {id: 1, numero_tombo: '#1', numero_registro: '101', objeto: 'Cordão de ouro da Roma Antiga.', price: 100},
-  {id: 2, numero_tombo: '#2', numero_registro: '201', objeto: 'Espada de um gladiador.', price: 100},
-  {id: 3, numero_tombo: '#3', numero_registro: '301', objeto: 'Arco Mongol.', price: 100}
+  {id: 1, numero_tombo: '#1', numero_registro: '101', objeto: 'Cordão de ouro da Roma Antiga.'},
+  {id: 2, numero_tombo: '#2', numero_registro: '201', objeto: 'Espada de um gladiador.'},
+  {id: 3, numero_tombo: '#3', numero_registro: '301', objeto: 'Arco Mongol.'},
+  {id: 4, name: 'teste', numero_tombo: "#4", numero_registro: "b", objeto: "a", outros_numeros: "c", titulo: "e", descricao_intriseca: "f", dimensao: "g", material: "h", procedencia: "a", aquisicao: "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "a", objetos_associados: "a", exposicoes: "a", publicacoes: "a", pesquisa: "a", observacao: "a",  autorizacao_uso: "a", restauro: "a", descricao_extrinseca: "a", periodo: "a", referencias: "a", registrado_por: "a", data_registro: "a"}
+
 ];
 
 function findProduct (productId) {
