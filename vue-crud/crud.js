@@ -1,8 +1,5 @@
 var products = [
-  {id: 1, numero_tombo: '#1', numero_registro: '101', objeto: 'Cordão de ouro da Roma Antiga.'},
-  {id: 2, numero_tombo: '#2', numero_registro: '201', objeto: 'Espada de um gladiador.'},
-  {id: 3, numero_tombo: '#3', numero_registro: '301', objeto: 'Arco Mongol.'},
-  {id: 4, name: 'teste', numero_tombo: "#4", numero_registro: "b", objeto: "a", outros_numeros: "c", titulo: "e", descricao_intriseca: "f", dimensao: "g", material: "h", procedencia: "a", aquisicao: "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "a", objetos_associados: "a", exposicoes: "a", publicacoes: "a", pesquisa: "a", observacao: "a",  autorizacao_uso: "a", restauro: "a", descricao_extrinseca: "a", periodo: "a", referencias: "a", registrado_por: "a", data_registro: "a"}
+    {id: 4, name: 'Scutum', numero_tombo: "#234523", numero_registro: "132130", objeto: "Escudo", outros_numeros: "c", titulo: "Scutum Romanus", descricao_intriseca: "f", dimensao: "105,5 x 41 x 30 cm", material: "Madeira, Bronze, Tinta", procedencia: "Dura-Europos - Síria", aquisicao:       "a", proprietario: "a", estado_conservacao: "a", data_aquisicao: "12/08/1962", objetos_associados: "a", exposicoes: "Nome da Exposição 1, Nome da exposição 2", publicacoes: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", pesquisa: "Nome de Pesquisas Relacionadas", observacao: "Notas de Observação",  autorizacao_uso: "Public Domain", restauro: "Dossiês de Restauro/Breve Resumo das atividades realizadas", descricao_extrinseca: "a", periodo: "Século III A.C.", referencias: "AUTOR. Título: subtítulo. Edição. Cidade onde foi publicado: Editora, ano de publicação. Total de Páginas.", registrado_por: "Nome do Funcionário", data_registro: "XX/XX/XX"}
 
 ];
 
