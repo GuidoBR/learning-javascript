@@ -76,6 +76,11 @@
 					</div>
 
 					<div class="form-group">
+						<label for="add-imagem">Imagem</label>
+						<input class="form-control" id="add-imagem" v-model="product.imagem" required/>
+					</div>
+
+					<div class="form-group">
 						<label for="add-registro">Número de Registro</label>
 						<input class="form-control" id="add-registro" v-model="product.numero_registro" required/>
 					</div>
@@ -208,6 +213,9 @@
 				<h2>{{ product.numero_tombo }}</h2>
 				<b>Numero Registro: </b>
 				<div>{{ product.numero_registro }}</div>
+        <br>
+        <img v-bind:src='product.imagem'>
+        <hr>
 				<b>Outros números: </b>
 				<div>{{ product.outros_numeros }}</div>
 				<b>Objeto: </b>
