@@ -124,21 +124,20 @@
 						<label for="add-ex-proprietario">Ex-proprietário</label>
 						<input class="form-control" id="add-ex-proprietario" v-model="product.proprietario" required/>
 					</div>
-          <!--
-
-					<div class="form-group">
-						<label for="add-data-aquisicao">Data de Aquisição</label>
-						<input class="form-control" id="add-data-aquisicao" v-model="product.data-aquisicao" required/>
-					</div>
 
 					<div class="form-group">
 						<label for="add-estado-conservacao">Estado de Conservação</label>
-						<input class="form-control" id="add-estado-conservacao" v-model="product.estado-conservacao" required/>
+						<input class="form-control" id="add-estado-conservacao" v-model="product.estado_conservacao" required/>
+					</div>
+
+					<div class="form-group">
+						<label for="add-data-aquisicao">Data de Aquisição</label>
+						<input class="form-control" id="add-data-aquisicao" v-model="product.data_aquisicao" required/>
 					</div>
 
 					<div class="form-group">
 						<label for="add-objetos-associados">Objetos Associados</label>
-						<input class="form-control" id="add-objetos-associados" v-model="product.objetos-associados" required/>
+						<input class="form-control" id="add-objetos-associados" v-model="product.objetos_associados" required/>
 					</div>
 
 					<div class="form-group">
@@ -163,7 +162,7 @@
 
 					<div class="form-group">
 						<label for="add-autorizacao-uso">Autorização de uso</label>
-						<input class="form-control" id="add-autorizacao-uso" v-model="product.autorizacao-uso" required/>
+						<input class="form-control" id="add-autorizacao-uso" v-model="product.autorizacao_uso" required/>
 					</div>
 
 					<div class="form-group">
@@ -188,14 +187,13 @@
 
 					<div class="form-group">
 						<label for="add-registrado-por">Registrado por</label>
-						<input class="form-control" id="add-registrado-por" v-model="product.registrado-por" required/>
+						<input class="form-control" id="add-registrado-por" v-model="product.registrado_por" required/>
 					</div>
 
 					<div class="form-group">
 						<label for="add-data-registro">Data de Registro</label>
-						<input class="form-control" id="add-data-registro" v-model="product.data-registro" required/>
+						<input class="form-control" id="add-data-registro" v-model="product.data_registro" required/>
 					</div>
-          -->
 
 					<button type="submit" class="btn btn-primary">Adicionar</button>
 					<router-link class="btn btn-default" v-bind:to="'/'">Cancelar</router-link>
