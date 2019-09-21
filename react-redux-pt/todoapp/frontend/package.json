@@ -2,17 +2,11 @@
   "name": "frontend",
   "version": "1.0.0",
   "description": "Todo App",
-  "dependencies": {
-    "react-scripts": "3.1.1"
-  },
   "main": "index.js",
   "scripts": {
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "wepback-dev-server --progress --colors --inline --hot",
-    "start": "webpack-dev-server -d --config webpack.config.js --content-base public/ --progress --colors",
-    "production": "webpack --progress -p"
+    "start": "webpack-dev-server --progress --colors --inline --hot",
+    "production": "webpack --progress -p",
+    "build": "webpack"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,7 +24,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.6.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.19.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
