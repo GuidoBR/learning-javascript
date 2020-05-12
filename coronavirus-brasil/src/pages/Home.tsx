@@ -18,7 +18,6 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <CardComponent />
-        <CardComponent />
       </IonContent>
     </IonPage>
   );
