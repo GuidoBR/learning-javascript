@@ -1,0 +1,7 @@
+{
+  "name": "coronavirus-brasil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
