@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <mat-toolbar class="header">
+      <span>
+        <a routerLink="/">
+          <img class="logo" src="assets/img/claramente-600x600.jpg" alt="{{ title }} logo">
+        </a>
+      </span>
+      <span class="title-group">
+        <a routerLink="{{ routeUrl }}">
+          <i class="material-icons">
+            {{ icon }}
+          </i>
+          {{ title }}
+        </a>
+      </span>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-podcast></app-podcast>
+</ion-content>
